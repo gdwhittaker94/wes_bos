@@ -1,0 +1,59 @@
+:root {
+--yellow: #ffc600;
+--black: #272727;
+}
+
+html {
+line-height: 1.15;
+-webkit-text-size-adjust: 100%;
+}
+
+*,
+body,
+*::before,
+*::after {
+padding: 0;
+margin: 0;
+border: 0;
+font-size: 30px;
+font-weight: 900;
+}
+
+body {
+box-sizing: border-box;
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+color: var(--black);
+text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+background-image: linear-gradient(110deg, #f93d66, #6d47d9);
+background-size: 100vw;
+margin-inline: 50px;
+margin-block: 50px;
+letter-spacing: -1px;
+}
+
+h1 {
+font-size: 2em;
+margin: 0 0;
+}
+
+.item {
+display: grid;
+justify-content: center;
+align-items: center;
+border: 5px solid rgba(0, 0, 0, 0.03);
+border-radius: 3px;
+background-color: var(--yellow);
+}
+
+/** THIS PROJECT */
+
+.container {
+display: grid;
+grid-gap: 20px;
+border: 10px solid var(--yellow);
+grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+/*? Grid items will have a minimum width of 500px. So, when there's 1000px of width on offer, there will be 2 columns across the page. When there's 1500px, 3 columns and so on. */
+
+/*? As the minimum is 500px, a screen size small than this will make the items overflow their container. Up until 1000px, just one item will span the entire page as the '1fr' unit allows it to take up the remaining free space. */

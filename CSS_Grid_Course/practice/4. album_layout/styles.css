@@ -1,0 +1,112 @@
+:root {
+--yellow: #ffc600;
+--black: #272727;
+}
+
+html {
+line-height: 1.15;
+-webkit-text-size-adjust: 100%;
+}
+
+*,
+body,
+*::before,
+*::after {
+padding: 0;
+margin: 0;
+border: 0;
+font-size: 30px;
+font-weight: 900;
+}
+
+body {
+box-sizing: border-box;
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+color: var(--black);
+text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+background-image: linear-gradient(110deg, #f93d66, #6d47d9);
+background-size: 100vw;
+margin-inline: 50px;
+margin-block: 50px;
+letter-spacing: -1px;
+}
+
+h1 {
+font-size: 2em;
+margin: 0 0;
+}
+
+.item {
+display: grid;
+justify-content: center;
+align-items: center;
+border: 5px solid rgba(0, 0, 0, 0.03);
+border-radius: 3px;
+background-color: var(--yellow);
+}
+
+/** THIS PROJECT */
+
+.albums {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+/*? ^^ Let the browser work out how many columns there are for us, as long as they're 300px wide. */
+
+.album {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    gap: 10px;
+
+    /*? Make a grid of the card itself, turning image and div containing text into grid items. Then made the item containing the image a fixed size and later we make the image itself 100% of that space so it fills it up, but doesn't take up more than 150px within the card.*/
+
+    /*? The amount of spacing given to the item that contains text is left for the browser to deal with. Use gap instead of margin to create spacing between items */
+
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    color: white;
+    padding: 25px;
+}
+
+.album__artwork {
+    max-width: 100%;
+}
+/*? ^^ Without this, the natural image size is 300x300pxs, which causes the card to be overly big and overflow its container. This rule-set forces the image to be sized based on the available space for it (within the column), not its natural size. */
+
+.album__details h2 {
+    font-size: 25px;
+}
+
+.album__artist {
+    font-size: 14px;
+}
+
+.album__desc {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.album__desc u {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+/* .album {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+
+    display: flex;
+    flex-basis: 50%;
+    align-items: center;
+} */
+/*! ^^ My first attempt using flexbox (works!) + max image width of 50%  +  margin-right: 10px (album__artwork) */
+
+
+
+
+
+
+

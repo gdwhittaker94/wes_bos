@@ -1,0 +1,105 @@
+:root {
+--yellow: #ffc600;
+--black: #272727;
+}
+
+html {
+line-height: 1.15;
+-webkit-text-size-adjust: 100%;
+}
+
+*,
+body,
+*::before,
+*::after {
+padding: 0;
+margin: 0;
+border: 0;
+font-size: 30px;
+font-weight: 900;
+}
+
+body {
+box-sizing: border-box;
+font-family: sans-serif;
+color: var(--black);
+text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+background-image: linear-gradient(110deg, #f93d66, #6d47d9);
+background-size: 100vw;
+padding: 50px;
+letter-spacing: -1px;
+}
+
+h1 {
+font-size: 2em;
+margin: 0 0;
+}
+
+/** THIS PROJECT */
+
+.gallery {
+    display:grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    grid-auto-rows: 100px;
+    grid-auto-flow: dense;
+}
+
+.item {
+    overflow: hidden;
+}
+
+.item.v2 {
+    grid-row: span 2;
+}
+
+.item.v3 {
+    grid-row: span 3;
+}
+
+.item.v4 {
+    grid-row: span 4;
+}
+
+.item.h2 {
+    grid-column: span 2;
+}
+
+.item.h3 {
+    grid-column: span 3;
+}
+
+.item.h4 {
+    grid-column: span 4;
+}
+
+
+.close {
+    background: none;
+    color: white;
+    border: 0;
+}
+
+.overlay {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.7);
+    inset: 0;
+    display: none;
+    z-index: 2;
+}
+
+.overlay.open {
+    display: grid;
+}
+
+.overlay-inner {
+    background: white;
+    width: 700px;
+    padding: 20px;
+}
+
+.overlay img {
+    width: 100%;
+}
+
+
+/*! Got to around 18m on this video: https://courses.wesbos.com/account/access/6414a4287d3ac24f8d320993/view/249560994 and stopped because I couldn't get it to work for me. */

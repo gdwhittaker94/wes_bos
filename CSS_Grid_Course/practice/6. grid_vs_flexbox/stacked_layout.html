@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./styles.css">
+<title>Flexbox vs CSS Grid: Stacked Layout!</title>
+</head>
+
+<body>
+<!-- Stacked Layout -->
+<div class="stacked">
+<div class="item">1</div>
+<div class="item">2</div>
+<div class="item">3</div>
+<div class="item">4</div>
+<div class="item">5</div>
+</div>
+
+<style>
+.stacked {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+/*? Only flexbox can create this uneven stacking of boxes. So here we've wrapped the flex-items in order to get them onto different rows and then we've used the 'space-around' value to get the second row (with only two items) to look uneven from the first row. */
+
+.stacked>* {
+    width: 30%;
+    margin-bottom: 20px;
+}
+/*? Because of width we've given each item, they are able to wrap onto new lines.  */
+
+</style>
+</body>
+
+</html>

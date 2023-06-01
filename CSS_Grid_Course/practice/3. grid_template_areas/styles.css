@@ -1,0 +1,103 @@
+:root {
+--yellow: #ffc600;
+--black: #272727;
+}
+
+html {
+line-height: 1.15;
+-webkit-text-size-adjust: 100%;
+}
+
+*,
+body,
+*::before,
+*::after {
+padding: 0;
+margin: 0;
+border: 0;
+font-size: 30px;
+font-weight: 900;
+}
+
+body {
+box-sizing: border-box;
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+color: var(--black);
+text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+background-image: linear-gradient(110deg, #f93d66, #6d47d9);
+background-size: 100vw;
+margin-inline: 50px;
+margin-block: 50px;
+letter-spacing: -1px;
+}
+
+h1 {
+font-size: 2em;
+margin: 0 0;
+}
+
+.item {
+display: grid;
+justify-content: center;
+align-items: center;
+border: 5px solid rgba(0, 0, 0, 0.03);
+border-radius: 3px;
+background-color: var(--yellow);
+}
+
+/** THIS PROJECT */
+
+.container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 400px 1fr;
+    grid-template-rows: 150px 150px 100px;
+    grid-template-areas:
+
+    "side1 content side2"
+    "side1 content side2"
+    "footer footer footer";
+}
+
+/*? Creates a specific layout which mimics the words we see above. Middle columns has a specific width and the other two columns adapt around it. 3 rows with explicit heights (in order to get it to a certain size) */
+
+.container2 {
+    margin-top: 50px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 400px 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+
+    "side1 content side2"
+    "side1 content side2"
+    "footer footer footer";
+}
+/*? With this container with '1fr' rows, the table shrinks and becomes as small as its content.  */
+
+.footer {
+    grid-area: footer;
+}
+
+.item1 {
+    grid-area: side1;
+}
+
+.item2 {
+    grid-area: content;
+}
+
+.item3 {
+    grid-area: side2;
+}
+
+@media (min-width: 901px) {
+    .container {
+        grid-template-areas:
+        "content content content"
+        "side1 side1 side2"
+        "footer footer footer";;
+    }
+    /*? After 901px the grid layout/design changes */
+
+}

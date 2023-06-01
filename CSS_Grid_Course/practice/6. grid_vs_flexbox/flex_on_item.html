@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./styles.css">
+<title>Flexbox vs CSS Grid: Flex on Item!</title>
+</head>
+
+<body>
+<!-- The Longer Item in the middle -->
+<div class="controls">
+    <button>⏯️</button>
+    <button>🐢</button>
+    <button>🐰</button>
+    <div class="scrubber"></div>
+    <button>💬</button>
+    <button>🔽</button>
+</div>
+
+<style>
+.controls {
+    margin: 200px 0;
+    display: flex;
+    /* display: grid;
+    grid-template-columns: auto auto auto 1fr auto auto; */
+    align-items: center;
+}
+
+/*? Here flexbox is better to make video buttons with an adaptable 'scrubber' in the middle (i.e. 'flex-on-item'). We make the div a flex container which automatically puts the elements on a row, then we just apply flex-grow: 1 to our 'scrubber' element meaning it can take all the spare room available and the other items are as big as their content. */
+
+/*? Alternatively, as we can see in the commented out code above, we could apply display: grid and give that long grid-template-columns a rule which essentially says the same thing: make all the objects the size of their content, except the 4th column which takes up all the spare space available. However, if we add or delete columns, the column targeted by this rule may change and so our design will not look as we intended. */
+
+.scrubber {
+    background: #BADA55;
+    height: 10px;
+    min-width: 100px;
+    border-radius: 10px;
+    flex: 1;
+}
+</style>
+
+</body>
+
+</html>

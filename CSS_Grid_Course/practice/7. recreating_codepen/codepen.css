@@ -1,0 +1,176 @@
+html {
+box-sizing: border-box;
+font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma,
+    Sans-Serif;
+font-weight: normal;
+--bgcolor: #191919;
+--bgcolor2: #373636;
+--white: white;
+text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+}
+
+*,
+*:before,
+*:after {
+box-sizing: inherit;
+}
+
+body {
+margin: 0;
+color: var(--white);
+}
+
+iframe {
+width: 100%;
+height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+font-weight: normal;
+margin: 0;
+font-size: 1.5em;
+}
+
+/** CUSTOM STYLES */
+
+.codepen {
+    display: grid;
+    grid-template-rows: auto 1fr 1fr auto;
+    height: 100vh;
+    background-color: var(--bgcolor2);
+}
+/*? Applied grid to page container and made each section a row */
+
+/*? Have to add height 100vh in order for the rows to spread across the page. Otherwise, grid only takes up around half the page! */
+
+
+/** ROW 1 */
+
+
+.pen {
+    display: grid;
+    /* grid-template-columns: 60% auto auto auto auto auto; */
+    grid-template-columns: 1fr;
+    grid-auto-flow: column;
+    background-color: var(--bgcolor);
+    align-items: center;
+    padding: 10px;
+}
+/*? ^^Originally I wrote the commented out code, but the buttons overflowed the viewport. The way to do it so the 'pen details' takes up most of the room is to use grid-auto-flow and let the browser automatically adjust the size of the other items so that they fit the page  */
+
+
+.button {
+    margin-inline-start: 10px;
+    border-radius: 5px;
+    background-color: #3e3e3f;
+    color: var(--white);
+    font-size: 1em;
+    border: none;
+    padding: 10px;
+}
+
+.button--dirty {
+    position: relative;
+}
+
+.button--dirty:after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: rgb(222, 222, 29);
+    height: 2px;
+    width: 90%;
+    left: 5%;
+    top: 3px;
+}
+
+.pen img {
+    margin-inline-start: 10px;
+}
+
+
+/** ROW 2 */
+
+
+.code {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background-color: var(--bgcolor2);
+    margin-inline: 5px;
+}
+
+.editor {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+/*? To get right arrangement of code editor section you need to organise the editor into 2 rows. 'Auto' means the first row remains small and fits to its content (instead of applying 'min-content' manually to it in 'editor__header' class below). */
+
+
+.editor__header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    align-content: center;
+    background-color: #18272F;
+    padding-inline: 10px;
+}
+
+.button--small {
+    font-size: 0.9em;
+    padding: 5px;
+    margin-block: 5px;
+}
+
+.editor__heading {
+    margin-inline-start: 10px;
+}
+
+.editor__code {
+    background-color: #1B2B34;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 100%;
+}
+
+.editor__number {
+    display: block;
+    padding-inline: 10px;
+}
+/*? In order to get numbers stacked on top of each with a bit of space on either side you have to make the numbers themselves 'display: block' and then just add padding to them (instead of changing the 'gutter' display value and add 'gap'). */
+
+
+.editor__input {
+    resize: none;
+    color: grey;
+    border: none;
+    background: none;
+    line-height: 19px;
+}
+/*? 'resize' property to remove textarea adjustability */
+
+
+/** ROW 3 */
+
+.preview {
+    display: grid;
+}
+
+
+/** ROW 4 */
+
+
+.settings {
+    background-color: var(--bgcolor);
+    /* display: relative;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0; */
+}
+/*? Once I made the container box a grid with 4 rows + giving that grid a height (see 'codepen') the position 'fixed' was unnecessary.  */
